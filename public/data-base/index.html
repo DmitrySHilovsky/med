@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QR-code generator</title>
+        <style>
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+            label {
+                margin: 5px;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"] {
+                margin: 5px;
+                padding: 5px;
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <label for="surname">Фамилия:</label>
+            <input type="text" id="surname" name="surname" />
+
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" />
+
+            <input type="submit" value="Поиск" />
+        </form>
+
+        <br /><br />
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Фамилия</th>
+                    <th>Имя</th>
+                    <th>Email</th>
+                    <th>Телефон</th>
+                    <th>hash</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Фамилия 1</td>
+                    <td>Имя 1</td>
+                    <td>email1@example.com</td>
+                    <td>123-456-7890</td>
+                </tr>
+                <tr>
+                    <td>Фамилия 2</td>
+                    <td>Имя 2</td>
+                    <td>email2@example.com</td>
+                    <td>987-654-3210</td>
+                </tr>
+                <!-- Добавьте больше строк по мере необходимости -->
+            </tbody>
+        </table>
+    </body>
+</html>

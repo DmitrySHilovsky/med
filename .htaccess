@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c> 
+  RewriteEngine On
+  RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+AddType application/wasm .wasm
+<FilesMatch "\.wasm$">
+    SetOutputFilter DEFLATE
+    SetEnvIfNoCase Request_URI "\.wasm$" no-gzip dont-vary
+</FilesMatch>
