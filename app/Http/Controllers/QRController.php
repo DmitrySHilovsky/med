@@ -18,15 +18,10 @@ class QRController extends Controller
         $hash = $request->input('hash');
         $qrCode = QrCode::size(200)->generate($hash);
 
-        $fullName = '<span style="font-size: 1.2em; font-weight: bold;">' .
-            mb_strtoupper($user->Lastname, 'UTF-8') . '<br>' .
-            mb_strtoupper($user->Name, 'UTF-8') . '<br>' .
-            mb_strtoupper($user->Surename, 'UTF-8') .
-            '</span>';
-
-        $fullNameWithPadding = '<div style="padding-top: 10px">' . $fullName . '</div>';
-
-        $qrCode .= '<p>' . $fullNameWithPadding . '</p>';
-        return $qrCode;
+        return view('qrcode.index', ['qrCode' => $qrCode, 'userName' => [
+            "Lastname" => $user->Lastname,
+            "Name" => $user->Name,
+            "Surename" => $user->Surename
+        ]]);
     }
 }
